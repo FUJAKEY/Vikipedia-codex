@@ -7,16 +7,30 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Welcome to Vikipedia</h1>
-  <section id="search">
-    <input type="text" id="searchInput" placeholder="Search Wikipedia">
-    <button onclick="search()">Search</button>
-    <ul id="searchResults"></ul>
-  </section>
-  <section id="mostVisited">
-    <h2>Most Visited Pages</h2>
-    <ul id="visitedList"></ul>
-  </section>
-<script src="app.js"></script>
-</body>
-</html>
+  <header>
+    <h1>Vikipedia</h1>
+  </header>
+  <main class="container">
+    <section id="search" class="card">
+      <h2>Search Wikipedia</h2>
+      <div class="flex-row">
+        <input type="text" id="searchInput" placeholder="Search articles">
+        <button onclick="search()">Search</button>
+      </div>
+      <ul id="searchResults" class="results"></ul>
+    </section>
+
+    <section id="random" class="card">
+      <h2>Random Article</h2>
+      <button onclick="getRandom()">Show Random Article</button>
+      <div id="randomResult" class="random-result"></div>
+    </section>
+
+    <section id="mostVisited" class="card">
+      <h2>Most Visited Pages</h2>
+      <ul id="visitedList" class="results"></ul>
+    </section>
+  </main>
+  <script src="app.js"></script>
+  </body>
+  </html>

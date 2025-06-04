@@ -38,6 +38,21 @@ app.get('/api/search', async (req, res) => {
   }
 });
 
+// fetch a random article summary
+app.get('/api/random', async (req, res) => {
+  try {
+    const url = 'https://en.wikipedia.org/api/rest_v1/page/random/summary';
+    const { data } = await axios.get(url);
+    res.json({
+      title: data.title,
+      extract: data.extract,
+      url: data.content_urls.desktop.page
+    });
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to fetch random article' });
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });

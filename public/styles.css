@@ -1,28 +1,56 @@
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 20px;
   background-color: #f8f9fa;
   color: #202122;
+  line-height: 1.6;
 }
 
-h1 {
+header {
+  background-color: #36c;
+  color: white;
+  padding: 1rem 0;
   text-align: center;
+  margin-bottom: 1rem;
 }
 
-section {
-  margin-bottom: 2rem;
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 0 1rem 2rem;
 }
 
-ul {
+.card {
+  background-color: white;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.flex-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.results {
   list-style-type: none;
   padding: 0;
 }
 
-li + li {
+.results li + li {
   margin-top: 0.5rem;
 }
 
 button {
-  margin-left: 0.5rem;
+  cursor: pointer;
+  background-color: #36c;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 3px;
+}
+
+.random-result {
+  margin-top: 0.5rem;
 }

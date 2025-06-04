@@ -41,3 +41,22 @@ async function search() {
 }
 
 document.addEventListener('DOMContentLoaded', loadMostVisited);
+
+async function getRandom() {
+  try {
+    const res = await fetch('/api/random');
+    const data = await res.json();
+    const container = document.getElementById('randomResult');
+    container.innerHTML = '';
+    const title = document.createElement('a');
+    title.href = data.url;
+    title.target = '_blank';
+    title.textContent = data.title;
+    const p = document.createElement('p');
+    p.textContent = data.extract;
+    container.appendChild(title);
+    container.appendChild(p);
+  } catch (e) {
+    console.error('Failed to fetch random article');
+  }
+}

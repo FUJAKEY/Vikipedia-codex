@@ -1,6 +1,6 @@
 # Vikipedia Codex
 
-A simple Node.js app that displays most visited Wikipedia pages and allows searching Wikipedia.
+A simple Node.js app that displays most visited Wikipedia pages, allows searching Wikipedia, and shows a random article on demand.
 
 ## Setup
 
