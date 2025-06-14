@@ -1,15 +1,17 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
-const sqlite3 = require('sqlite3').verbose();
 
 const app = express();
 const dbDir = path.join(__dirname, 'db');
 if (!fs.existsSync(dbDir)) {
   fs.mkdirSync(dbDir, { recursive: true });
 }
-const dbPath = path.join(dbDir, 'wiki.db');
-const db = new sqlite3.Database(dbPath);
+const dbPath = path.join(dbDir, 'wiki.json');
+if (!fs.existsSync(dbPath)) {
+  fs.writeFileSync(dbPath, JSON.stringify([]));
+}
+app.locals.dbPath = dbPath;
 
 // Middleware
 app.use(express.urlencoded({ extended: true }));
