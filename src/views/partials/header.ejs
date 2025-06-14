@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<label for="menuToggle" class="menu-icon">&#9776;</label>
+<input type="checkbox" id="menuToggle" />
+<nav class="slide-menu">
+    <h3>Категории</h3>
+    <ul>
+        <li>Игры
+            <ul>
+                <li><a href="/articles?q=Roblox">Roblox</a></li>
+                <li><a href="/articles?q=Minecraft">Minecraft</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+<div class="container">
+    <form method="GET" action="/articles" class="search">
+        <input type="text" name="q" placeholder="Поиск..." />
+    </form>
+
