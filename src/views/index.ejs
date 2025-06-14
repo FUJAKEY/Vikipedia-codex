@@ -1,0 +1,11 @@
+<%- include('partials/header', { title: 'Статьи' }) %>
+<h1>Статьи</h1>
+<a href="/articles/new">Создать статью</a>
+<ul>
+    <% articles.forEach(function(article) { %>
+    <li>
+        <a href="/articles/<%= article.id %>"><%= article.title %></a>
+    </li>
+    <% }) %>
+</ul>
+<%- include('partials/footer') %>
